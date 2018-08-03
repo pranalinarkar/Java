@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{
+background-color:#f0f0f0;}
+div{
+padding-left:450px;
+padding-top:60px
+font-size:20px;
+font-style:italic}
+h2{
+padding-top:50px;
+font-size:30px;
+font-style:italic;
+color:#B32B61;
+}
+#electric_select{
+	display: none;
+	align:center;
+}
+#phone_select{
+	display: none;
+}
+</style>
+<script>
+	
+</script>
+</head>
+<body>
+<h2 align="center">Enter your details for new account</h2>
+<form action="pay-bills.do" method="post">
+<div>
+<input type="radio" name="title" value="Electric Bill" id="ele_radio">Electric Bill
+<input type="radio" name="title" value="Phone Bill" id="phone_radio">Phone Bill
+  <select name="Electric Bill" id="electric_select">
+                <option value="SELECT">SELECT</option>
+    <option value="MSEB">MSEB</option>
+    <option value="TATA">TATA</option>
+    <option value="RELIANCE">RELIANCE</option>
+      </select></div>
+  <div>
+  <select name="Phone Bill" id="phone_select">
+                <option value="SELECT">SELECT</option>
+    <option value="MTNL">MTNL</option>
+    <option value="JIO">JIO</option>
+    <option value="AIRTEL">AIRTEL</option>
+    <option value="VODAFONE">VODAFONE</option>
+    <option value="IDEA">IDEA</option>
+  </select></div><br><br>
+
+<div>Amount :<input type="text" name="amt"/></div><br/>
+<div><input type="submit" value="Submit" align="center"></div>
+</form>
+<script>
+	var eleRadio = document.getElementById("ele_radio");
+	var phoneRadio = document.getElementById("phone_radio");
+	
+	eleRadio.checked = false;
+	phoneRadio.checked = false;
+	
+	var eleSelect = document.getElementById("electric_select");
+	var phoneSelect = document.getElementById("phone_select");
+	
+	eleRadio.addEventListener("click", function(){
+		if (eleRadio.checked)
+		{
+			eleSelect.style.display = "block";
+			phoneSelect.style.display = "none";
+		}
+	}, false);
+	
+	phoneRadio.addEventListener("click", function(){
+		eleSelect.style.display = "none";
+		phoneSelect.style.display = "block";
+	}, false);
+</script>
+</body>
+</html>
