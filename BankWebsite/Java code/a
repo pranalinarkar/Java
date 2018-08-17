@@ -1,0 +1,7 @@
+drop table account
+CREATE TABLE Account(accno int NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1) PRIMARY KEY,pin int,id int references Userdetails(id),balance numeric,type varchar(10))
+select * from ACCOUNT
+select * from USERDETAILS
+drop table Userdetails
+CREATE TABLE Userdetails(firstName  varchar(20),lastName varchar(20),Title varchar(3),Dob Date,email varchar(20),pass varchar(20),id int NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1) PRIMARY KEY,pan varchar(20) UNIQUE)
+select * from account where id=1
